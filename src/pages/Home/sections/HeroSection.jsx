@@ -1,46 +1,49 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Cpu, FileText, Search, Users, TrendingUp, CheckCircle } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { viewportOnce } from '@/shared/motion'
 import { Button } from '@/shared/components'
-import { HERO_DATA, HERO_DASHBOARD } from '../home.data'
+import { HERO_DATA, HERO_COMMAND_CENTER } from '../home.data'
 import {
   heroContainerVariants,
   heroContentVariants,
-  corePulseVariants,
-  coreRingVariants,
-  dashNodeVariants,
-  connectionLineVariants,
-  metricCardVariants,
+  screenPanelVariants,
+  siteMarkerVariants,
+  routeLineVariants,
+  floatPanelVariants,
+  flowStepVariants,
 } from '../home.motion'
 
-/* ------------------------------------------------------------------ */
-/*  Icon lookup for dashboard nodes                                   */
-/* ------------------------------------------------------------------ */
-const NODE_ICON_MAP = { FileText, Search, Users, TrendingUp, CheckCircle }
+/* ──────────────── building / warehouse / supplier shape helpers ──────────── */
 
-const NODE_COLOR_MAP = {
-  blue:   { dot: 'bg-blue-500', soft: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-600', line: 'rgba(59,130,246,0.35)' },
-  emerald:{ dot: 'bg-emerald-500', soft: 'bg-emerald-50', border: 'border-emerald-200', text: 'text-emerald-600', line: 'rgba(16,185,129,0.35)' },
-  purple: { dot: 'bg-purple-500', soft: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-600', line: 'rgba(147,51,234,0.35)' },
-  amber:  { dot: 'bg-amber-500', soft: 'bg-amber-50', border: 'border-amber-200', text: 'text-amber-600', line: 'rgba(217,119,6,0.35)' },
-  cyan:   { dot: 'bg-cyan-500', soft: 'bg-cyan-50', border: 'border-cyan-200', text: 'text-cyan-600', line: 'rgba(6,182,212,0.35)' },
+function SiteShape({ type, color = '#64748b' }) {
+  const sz = { building: [14, 10], warehouse: [20, 16], supplier: [11, 11] }[type] || [14, 10]
+  const rx = type === 'supplier' ? sz[0] / 2 : 2.5
+  return (
+    <rect
+      x={-(sz[0] / 2)} y={-(sz[1] / 2)}
+      width={sz[0]} height={sz[1]} rx={rx}
+      fill={color} opacity="0.85"
+      style={{ filter: 'drop-shadow(0 2px 3px rgba(0,0,0,0.25))' }}
+    />
+  )
 }
 
-/* ------------------------------------------------------------------ */
-/*  HeroSection                                                        */
-/* ------------------------------------------------------------------ */
-export default function HeroSection() {
-  const { aiCore, nodes, centerPos, metrics } = HERO_DASHBOARD
+/* ══════════════════════════════════════════════════════════════════════════ */
+/*  HeroSection                                                               */
+/* ══════════════════════════════════════════════════════════════════════════ */
 
-  // Compute SVG line coordinates from percentage positions.
-  // viewBox = "0 0 1000 600"
-  const cx = 500, cy = 228  // centerPos 50% / 38%
-  const nodeCoords = [
-    { x: 180, y: 156 },  // 需求录入   18% / 26%
-    { x: 500, y: 48  },  // 智能询价   50% / 8%
-    { x: 820, y: 156 },  // 供应商匹配 82% / 26%
-    { x: 220, y: 360 },  // 价格分析   22% / 60%
-    { x: 780, y: 360 },  // 履约追踪   78% / 60%
+export default function HeroSection() {
+  const { screenTitle, screenSub, sites, routes, panels, flow } = HERO_COMMAND_CENTER
+
+  // SVG viewBox coordinate system for the map inside the central panel
+  const VB = { w: 400, h: 280 }
+
+  const nodePos = [
+    { x: 80,  y: 65,  color: '#94a3b8' },  // 科技园项目
+    { x: 300, y: 55,  color: '#94a3b8' },  // 商务区项目
+    { x: 195, y: 150, color: '#d4874b' },  // 区域中心仓 — accent
+    { x: 65,  y: 210, color: '#64748b' },  // 供应商集群
+    { x: 305, y: 205, color: '#94a3b8' },  // 住宅区项目
   ]
 
   return (
@@ -48,9 +51,9 @@ export default function HeroSection() {
       id="hero"
       className="relative min-h-[100dvh] flex items-center overflow-hidden"
     >
-      {/* Background layers */}
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-surface-50 via-surface-100 to-surface-50" />
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-600/[0.03] to-transparent" />
+      <div className="absolute top-0 right-0 w-[55%] h-full bg-gradient-to-l from-blue-600/[0.025] via-transparent to-transparent" />
 
       <motion.div
         className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
@@ -59,9 +62,7 @@ export default function HeroSection() {
         animate="visible"
         viewport={viewportOnce}
       >
-        {/* ================================================================= */}
-        {/*  Left: Content  (unchanged)                                       */}
-        {/* ================================================================= */}
+        {/* ═════════════════════════════════════════════════════════════════ Left */}
         <div className="flex flex-col gap-8 pt-20 lg:pt-0">
           <motion.div variants={heroContentVariants} className="flex flex-col gap-4">
             <h1 className="text-[clamp(2.25rem,5vw,4.5rem)] font-bold tracking-tight text-surface-800 leading-[1.1]">
@@ -86,146 +87,190 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* ================================================================= */}
-        {/*  Right: AI Supply Chain Dashboard                                 */}
-        {/* ================================================================= */}
+        {/* ════════════════════════════════════════════════════════════════ Right */}
         <motion.div
           variants={heroContentVariants}
-          className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-[520px] rounded-2xl border border-surface-200 bg-white/60 overflow-hidden select-none"
+          className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-[540px] select-none"
         >
-          {/* ---------- subtle grid ---------- */}
-          <div
-            className="absolute inset-0 opacity-[0.08]"
-            style={{
-              backgroundImage: [
-                'linear-gradient(rgba(59,130,246,0.12) 1px, transparent 1px)',
-                'linear-gradient(90deg, rgba(59,130,246,0.1) 1px, transparent 1px)',
-              ].join(', '),
-              backgroundSize: '44px 44px',
-            }}
-          />
+          {/* ── 4 floating data panels ── */}
+          {panels.map((p, i) => {
+            const pos = {
+              tl: 'top-1 left-0',
+              tr: 'top-1 right-0',
+              bl: 'bottom-[84px] left-0',
+              br: 'bottom-[84px] right-0',
+            }[p.pos]
 
-          {/* ---------- SVG connection lines + flow dots ---------- */}
-          <svg
-            className="absolute inset-0 w-full h-full"
-            viewBox="0 0 1000 600"
-            fill="none"
-            aria-hidden="true"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            {nodeCoords.map((nc, i) => (
-              <g key={`conn-${i}`}>
-                {/* static line */}
-                <motion.line
-                  x1={cx} y1={cy} x2={nc.x} y2={nc.y}
-                  stroke={NODE_COLOR_MAP[nodes[i].color].line}
-                  strokeWidth="1.2"
-                  variants={connectionLineVariants}
-                  custom={i}
-                  initial="hidden"
-                  animate="visible"
-                />
-                {/* flowing dash line (looping offset) */}
-                <line
-                  x1={cx} y1={cy} x2={nc.x} y2={nc.y}
-                  stroke={NODE_COLOR_MAP[nodes[i].color].line}
-                  strokeWidth="2"
-                  strokeDasharray="8 120"
-                  opacity="0.6"
-                >
-                  <animate
-                    attributeName="stroke-dashoffset"
-                    from="0" to="-256"
-                    dur="2.5s"
-                    repeatCount="indefinite"
-                  />
-                </line>
-              </g>
-            ))}
-          </svg>
-
-          {/* ---------- AI Core (center) ---------- */}
-          <motion.div
-            className="absolute z-20 flex flex-col items-center gap-1.5"
-            style={{ left: centerPos.x, top: centerPos.y, transform: 'translate(-50%, -50%)' }}
-            variants={corePulseVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {/* pulse ring */}
-            <motion.div
-              className="absolute w-[72px] h-[72px] rounded-full border border-accent-300/50"
-              variants={coreRingVariants}
-              initial="hidden"
-              animate="visible"
-            />
-            <motion.div
-              className="absolute w-[88px] h-[88px] rounded-full border border-accent-200/40"
-              variants={coreRingVariants}
-              initial="hidden"
-              animate="visible"
-            />
-            {/* icon wrapper */}
-            <div className="relative w-14 h-14 rounded-full bg-accent-500 flex items-center justify-center shadow-sm">
-              <Cpu className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-xs font-semibold text-surface-700 tracking-wide">
-              {aiCore.label}
-            </span>
-          </motion.div>
-
-          {/* ---------- 5 business nodes ---------- */}
-          {nodes.map((node, i) => {
-            const Icon = NODE_ICON_MAP[node.icon]
-            const palette = NODE_COLOR_MAP[node.color]
             return (
               <motion.div
-                key={node.id}
-                className={`absolute z-10 flex items-center gap-2 bg-white/90 backdrop-blur-sm border ${palette.border} rounded-lg px-3 py-2 shadow-sm`}
-                style={{ left: node.x, top: node.y, transform: 'translate(-50%, -50%)' }}
-                variants={dashNodeVariants}
+                key={p.label}
+                className={`absolute z-30 ${pos} bg-white/80 backdrop-blur-md border border-surface-200/80 rounded-xl px-4 py-3 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.03)]`}
+                variants={floatPanelVariants}
                 custom={i}
                 initial="hidden"
                 animate="visible"
-                whileHover={{ scale: 1.04, boxShadow: '0 4px 12px rgba(0,0,0,0.06)' }}
+                style={{ willChange: 'transform' }}
               >
-                <div className={`w-6 h-6 rounded-md ${palette.soft} flex items-center justify-center`}>
-                  <Icon className={`w-3.5 h-3.5 ${palette.text}`} />
+                <div className="text-[10px] text-surface-400 tracking-wide mb-0.5">
+                  {p.label}
                 </div>
-                <span className="text-xs font-medium text-surface-700 whitespace-nowrap">
-                  {node.label}
-                </span>
+                <div className="text-lg font-bold text-surface-800 tracking-tight leading-none">
+                  {p.value}
+                </div>
+                <div className="text-[10px] text-surface-400 mt-1">{p.hint}</div>
               </motion.div>
             )
           })}
 
-          {/* ---------- 3 metric cards (bottom) ---------- */}
-          <div className="absolute bottom-3 left-3 right-3 z-10 flex gap-2.5">
-            {metrics.map((m, i) => (
+          {/* ── Central dark-glass command screen ── */}
+          <motion.div
+            className="absolute z-10 inset-x-0 top-10 bottom-[92px] rounded-2xl overflow-hidden
+                       bg-[#1a1f2e] border border-white/[0.08]
+                       shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_8px_32px_rgba(0,0,0,0.10),0_2px_8px_rgba(0,0,0,0.06)]"
+            variants={screenPanelVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* ── title bar ── */}
+            <div className="absolute top-0 left-0 right-0 h-10 bg-[#141923] border-b border-white/[0.05] flex items-center px-4 gap-2 z-20">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#475569]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#475569]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#475569]" />
+              <span className="ml-3 text-[11px] text-slate-500 tracking-wide font-medium">
+                {screenTitle}
+              </span>
+              <span className="ml-auto text-[10px] text-slate-600">{screenSub}</span>
+            </div>
+
+            {/* ── blueprint grid ── */}
+            <div
+              className="absolute inset-0 top-10 opacity-[0.06]"
+              style={{
+                backgroundImage: [
+                  'linear-gradient(rgba(148,163,184,0.4) 1px, transparent 1px)',
+                  'linear-gradient(90deg, rgba(148,163,184,0.4) 1px, transparent 1px)',
+                ].join(', '),
+                backgroundSize: '28px 28px',
+              }}
+            />
+
+            {/* ── SVG map layer ── */}
+            <svg
+              className="absolute inset-0 top-10 w-full h-[calc(100%-40px)]"
+              viewBox={`0 0 ${VB.w} ${VB.h}`}
+              fill="none"
+              preserveAspectRatio="xMidYMid meet"
+              aria-hidden="true"
+            >
+              {/* subtle crosshair grid */}
+              <defs>
+                <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <circle cx="10" cy="10" r="0.7" fill="rgba(148,163,184,0.25)" />
+                </pattern>
+              </defs>
+              <rect x="0" y="0" width={VB.w} height={VB.h} fill="url(#dots)" />
+
+              {/* route lines — supplier to warehouse, warehouse to sites */}
+              {routes.map((r, i) => {
+                const fx = nodePos[r.from].x, fy = nodePos[r.from].y
+                const tx = nodePos[r.to].x,   ty = nodePos[r.to].y
+                return (
+                  <g key={`route-${i}`}>
+                    {/* static line */}
+                    <motion.line
+                      x1={fx} y1={fy} x2={tx} y2={ty}
+                      stroke="rgba(148,163,184,0.5)"
+                      strokeWidth="1" strokeDasharray="5 4"
+                      variants={routeLineVariants}
+                      custom={i}
+                      initial="hidden"
+                      animate="visible"
+                    />
+                    {/* flowing dot */}
+                    <circle r="2" fill="rgba(212,135,75,0.8)">
+                      <animateMotion
+                        dur="2.2s" repeatCount="indefinite"
+                        path={`M${fx},${fy} L${tx},${ty}`}
+                      />
+                    </circle>
+                  </g>
+                )
+              })}
+
+              {/* site markers */}
+              {sites.map((site, i) => (
+                <motion.g
+                  key={site.id}
+                  transform={`translate(${nodePos[i].x},${nodePos[i].y})`}
+                  variants={siteMarkerVariants}
+                  custom={i}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  <SiteShape type={site.type} color={nodePos[i].color} />
+                  {/* label */}
+                  <text
+                    x={site.type === 'warehouse' ? 16 : 12}
+                    y={site.type === 'warehouse' ? 3 : 2.5}
+                    fill="rgba(203,213,225,0.7)"
+                    fontSize="8"
+                    fontFamily="system-ui"
+                    style={{ letterSpacing: '0.02em' }}
+                  >
+                    {site.label}
+                  </text>
+                </motion.g>
+              ))}
+            </svg>
+
+            {/* ── scanning line ── */}
+            <div
+              className="absolute left-0 right-0 h-px z-15 pointer-events-none"
+              style={{
+                top: '40px',
+                background: 'linear-gradient(90deg, transparent 0%, rgba(212,135,75,0.35) 20%, rgba(212,135,75,0.55) 50%, rgba(212,135,75,0.35) 80%, transparent 100%)',
+                animation: 'scanDown 4s ease-in-out infinite',
+              }}
+            />
+          </motion.div>
+
+          {/* ── Bottom flow bar ── */}
+          <div className="absolute bottom-2 left-6 right-6 z-30 flex items-center justify-center gap-0">
+            {flow.map((step, i) => (
               <motion.div
-                key={m.label}
-                className="flex-1 bg-white/85 backdrop-blur-sm border border-surface-200 rounded-lg px-3 py-2.5 text-center"
-                variants={metricCardVariants}
+                key={step}
+                className="flex items-center gap-0"
+                variants={flowStepVariants}
                 custom={i}
                 initial="hidden"
                 animate="visible"
-                whileHover={{ y: -2, boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}
-                transition={{ duration: 0.2 }}
               >
-                <div className="text-base font-bold text-surface-800 tracking-tight">
-                  {m.value}
-                </div>
-                <div className="text-[10px] text-surface-500 mt-0.5 leading-tight">
-                  {m.label}
-                </div>
-                <div className="text-[9px] text-accent-500 mt-0.5">
-                  {m.hint}
-                </div>
+                <span className={[
+                  'px-3 py-1.5 rounded-md text-[11px] font-medium tracking-wide',
+                  i === 0
+                    ? 'bg-accent-500/12 text-accent-600 border border-accent-300/40'
+                    : 'text-surface-500',
+                ].join(' ')}>
+                  {step}
+                </span>
+                {i < flow.length - 1 && (
+                  <span className="text-surface-300 mx-0.5 text-[10px]">→</span>
+                )}
               </motion.div>
             ))}
           </div>
         </motion.div>
       </motion.div>
+
+      {/* scanning line keyframes */}
+      <style>{`
+        @keyframes scanDown {
+          0%, 100% { top: 40px; opacity: 0; }
+          15% { opacity: 1; }
+          85% { opacity: 1; }
+          100% { top: calc(100% - 52px); opacity: 0; }
+        }
+      `}</style>
     </section>
   )
 }

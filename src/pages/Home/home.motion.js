@@ -55,60 +55,54 @@ export const trustLineVariants = {
   },
 }
 
-// Dashboard: AI core breathing pulse
-export const corePulseVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
+// Command Center: central screen panel entrance
+export const screenPanelVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.96 },
   visible: {
     opacity: 1,
+    y: 0,
     scale: 1,
-    transition: { duration: 0.7, ease: EASE_OUT_EXPO, delay: 0.2 },
-  },
-}
-export const coreRingVariants = {
-  hidden: { scale: 0.8, opacity: 0 },
-  visible: {
-    scale: [1, 1.08, 1],
-    opacity: [0.5, 0.25, 0.5],
-    transition: { duration: 3, repeat: Infinity, ease: 'easeInOut' },
+    transition: { duration: 0.8, ease: EASE_OUT_EXPO, delay: 0.15 },
   },
 }
 
-// Dashboard: business node entrance
-export const dashNodeVariants = {
-  hidden: { opacity: 0, scale: 0.7 },
+// Command Center: site marker entrance
+export const siteMarkerVariants = {
+  hidden: { opacity: 0, scale: 0 },
   visible: (i) => ({
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.5, ease: EASE_OUT_EXPO, delay: 0.35 + i * 0.08 },
+    transition: { duration: 0.5, ease: EASE_OUT_EXPO, delay: 0.5 + i * 0.08 },
   }),
 }
 
-// Dashboard: connection line draw
-export const connectionLineVariants = {
+// Command Center: route line draw
+export const routeLineVariants = {
   hidden: { pathLength: 0, opacity: 0 },
   visible: (i) => ({
     pathLength: 1,
     opacity: 1,
-    transition: { duration: 0.8, ease: EASE_OUT_EXPO, delay: 0.5 + i * 0.06 },
+    transition: { duration: 1, ease: EASE_OUT_EXPO, delay: 0.55 + i * 0.1 },
   }),
 }
 
-// Dashboard: flow dot along a line
-export const flowDotVariants = {
-  hidden: { opacity: 0 },
-  visible: (i) => ({
-    opacity: [0, 1, 1, 0],
-    transition: { duration: 1.8, delay: 0.9 + i * 0.15, repeat: Infinity, ease: 'linear' },
-  }),
-}
-
-// Dashboard: metric card entrance
-export const metricCardVariants = {
-  hidden: { opacity: 0, y: 20 },
+// Command Center: floating panel drift
+export const floatPanelVariants = {
+  hidden: { opacity: 0, y: 16 },
   visible: (i) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: EASE_OUT_EXPO, delay: 0.7 + i * 0.1 },
+    transition: { duration: 0.7, ease: EASE_OUT_EXPO, delay: 0.6 + i * 0.1 },
+  }),
+}
+
+// Command Center: flow step entrance
+export const flowStepVariants = {
+  hidden: { opacity: 0, x: -8 },
+  visible: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.4, ease: EASE_OUT_EXPO, delay: 0.8 + i * 0.08 },
   }),
 }
 

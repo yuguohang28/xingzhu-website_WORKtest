@@ -75,24 +75,34 @@ export const SECTION_HEADERS = {
   trust: { label: '领先企业信赖之选' },
 }
 
-export const HERO_DASHBOARD = {
-  aiCore: {
-    label: 'AI 中枢',
-    sublabel: '星筑智能引擎',
-  },
-  nodes: [
-    { id: 'demand', label: '需求录入', icon: 'FileText', x: '18%', y: '26%', color: 'blue' },
-    { id: 'inquiry', label: '智能询价', icon: 'Search', x: '50%', y: '8%', color: 'emerald' },
-    { id: 'matching', label: '供应商匹配', icon: 'Users', x: '82%', y: '26%', color: 'purple' },
-    { id: 'pricing', label: '价格分析', icon: 'TrendingUp', x: '22%', y: '60%', color: 'amber' },
-    { id: 'tracking', label: '履约追踪', icon: 'CheckCircle', x: '78%', y: '60%', color: 'cyan' },
+export const HERO_COMMAND_CENTER = {
+  screenTitle: 'AI Supply Command',
+  screenSub: '实时供应链指挥中心',
+  // Site nodes on the map — x/y in percentage within the central panel
+  sites: [
+    { id: 'site-a', label: '科技园项目', type: 'building', x: 22, y: 28 },
+    { id: 'site-b', label: '商务区项目', type: 'building', x: 72, y: 22 },
+    { id: 'warehouse', label: '区域中心仓', type: 'warehouse', x: 48, y: 54 },
+    { id: 'supplier', label: '供应商集群', type: 'supplier', x: 18, y: 62 },
+    { id: 'site-c', label: '住宅区项目', type: 'building', x: 76, y: 58 },
   ],
-  centerPos: { x: '50%', y: '38%' },
-  metrics: [
-    { label: '今日询价', value: '1,284', hint: '较昨日 +12%' },
-    { label: '匹配供应商', value: '326', hint: '实时在线' },
-    { label: '平均响应', value: '18min', hint: '优于行业 40%' },
+  // Routes: indices into sites array (from -> to)
+  routes: [
+    { from: 3, to: 2 },  // supplier -> warehouse
+    { from: 2, to: 0 },  // warehouse -> site-a
+    { from: 2, to: 1 },  // warehouse -> site-b
+    { from: 2, to: 4 },  // warehouse -> site-c
+    { from: 3, to: 0 },  // supplier -> site-a (direct)
   ],
+  // 4 floating stat panels
+  panels: [
+    { label: '智能询价', value: '1,284', hint: '今日处理', pos: 'tl' },
+    { label: '价格指数', value: '+3.2%', hint: '较上周 ↑', pos: 'tr' },
+    { label: '供应商在线', value: '326', hint: '实时响应', pos: 'bl' },
+    { label: '履约风险', value: '低', hint: '风险可控', pos: 'br' },
+  ],
+  // Bottom supply chain flow bar
+  flow: ['需求识别', '询价比价', '供应匹配', '履约追踪'],
 }
 
 export const CTA_DATA = {
