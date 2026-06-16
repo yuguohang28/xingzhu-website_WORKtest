@@ -31,11 +31,11 @@ export default function CTASection() {
           预约专属演示，了解星筑科技如何通过AI技术赋能您的采购、物流与质量管理，驱动供应链全面升级。
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <Button variant="primary" size="lg" href="#">
+          <Button variant="primary" size="lg" to="/contact">
             预约演示
             <ArrowRight className="w-4 h-4" />
           </Button>
-          <Button variant="secondary" size="lg" href="#">
+          <Button variant="secondary" size="lg" to="/contact">
             获取解决方案白皮书
           </Button>
         </div>

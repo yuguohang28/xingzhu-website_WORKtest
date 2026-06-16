@@ -34,10 +34,16 @@ export default function HeroSection() {
               从智能采购到全链路追溯，星筑科技以AI为核心驱动建材供应链数字化升级，帮助企业降本增效、掌控质量、规避风险。
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="#solutions-tabs">
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={() => {
+                  document.getElementById('solutions-tabs')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              >
                 了解解决方案
               </Button>
-              <Button variant="secondary" size="lg" href="#solutions-cta">
+              <Button variant="secondary" size="lg" to="/contact">
                 预约演示
               </Button>
             </div>

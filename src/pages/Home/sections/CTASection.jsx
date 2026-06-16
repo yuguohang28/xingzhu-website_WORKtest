@@ -35,7 +35,7 @@ export default function CTASection() {
             <Button
               variant="primary"
               size="lg"
-              href={CTA_DATA.buttonHref}
+              to={CTA_DATA.buttonTo}
             >
               {CTA_DATA.buttonText}
               <ArrowRight className="ml-2 w-4 h-4" />

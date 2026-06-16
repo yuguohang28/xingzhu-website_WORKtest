@@ -3,8 +3,8 @@ export const HERO_DATA = {
   headlineLine2: '建筑供应链',
   headlineHighlight: '建筑供应链',
   subtext: '以人工智能重塑建材流通，让每一块建材都能追根溯源。',
-  primaryCta: { text: '了解平台', href: '#capabilities' },
-  secondaryCta: { text: '预约演示', href: '#contact' },
+  primaryCta: { text: '了解平台', to: '/solutions' },
+  secondaryCta: { text: '预约演示', to: '/contact' },
 }
 
 export const CAPABILITY_CARDS = [
@@ -80,5 +80,5 @@ export const CTA_DATA = {
   description:
     '加入 12,000+ 供应商，共同构建 AI 驱动的建材流通新生态。',
   buttonText: '立即预约演示',
-  buttonHref: '#contact',
+  buttonTo: '/contact',
 }

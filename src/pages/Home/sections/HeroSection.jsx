@@ -42,10 +42,10 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div variants={heroContentVariants} className="flex flex-wrap gap-4">
-            <Button variant="primary" size="lg" href={HERO_DATA.primaryCta.href}>
+            <Button variant="primary" size="lg" to={HERO_DATA.primaryCta.to}>
               {HERO_DATA.primaryCta.text}
             </Button>
-            <Button variant="outline" size="lg" href={HERO_DATA.secondaryCta.href}>
+            <Button variant="outline" size="lg" to={HERO_DATA.secondaryCta.to}>
               {HERO_DATA.secondaryCta.text}
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
