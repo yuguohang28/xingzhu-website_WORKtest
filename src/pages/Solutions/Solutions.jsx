@@ -10,7 +10,7 @@ import {
   ComparisonSection,
   CTASection,
 } from './solutions.sections'
-import { solutionCategories } from './solutions.data'
+import { solutionCategories, SOLUTIONS_SECTION_CONTENT } from './solutions.data'
 import { TAB_CONFIG } from './solutions.config'
 
 export default function Solutions() {
@@ -30,10 +30,10 @@ export default function Solutions() {
         <div className="max-w-[1400px] mx-auto">
           <div className="max-w-[720px]">
             <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-white leading-[1.1]">
-              四大解决方案
+              {SOLUTIONS_SECTION_CONTENT.tabs.title}
             </h2>
             <p className="mt-5 text-slate-400 text-base leading-relaxed max-w-[65ch]">
-              围绕建材供应链核心场景，提供从采购到交付的全链路AI解决方案
+              {SOLUTIONS_SECTION_CONTENT.tabs.description}
             </p>
           </div>
 

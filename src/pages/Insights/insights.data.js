@@ -1,5 +1,18 @@
 // === Xingzhu Technology - Insights Data ===
 
+export const SECTION_CONTENT = {
+  featured: {
+    eyebrow: '精选推荐',
+    headline: '本期重点',
+    description: '来自行业前沿的深度报道与趋势分析，助您把握市场脉搏。',
+  },
+  allArticles: {
+    eyebrow: '全部文章',
+    headline: '探索更多内容',
+    description: '涵盖行业趋势、技术实践、政策解读与案例研究的多维内容矩阵。',
+  },
+}
+
 export const CATEGORIES = [
   { id: 'all', label: '全部' },
   { id: 'industry-trends', label: '行业趋势' },

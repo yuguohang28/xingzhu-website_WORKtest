@@ -70,6 +70,11 @@ export const TRUST_LOGOS = [
   { id: 6, name: '保利发展' },
 ]
 
+export const SECTION_HEADERS = {
+  capabilities: { title: '核心能力', subtitle: 'AI 技术驱动建材供应链全面升级' },
+  trust: { label: '领先企业信赖之选' },
+}
+
 export const CTA_DATA = {
   title: '开启智能供应链之旅',
   description:

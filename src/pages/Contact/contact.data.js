@@ -94,3 +94,21 @@ export const OFFICE_LOCATIONS = [
     hours: '工作日 9:00 - 18:00',
   },
 ]
+
+export const HERO_CONTENT = {
+  eyebrow: '联系我们',
+  headline1: '与星筑科技',
+  headline2: '建立联系',
+  description:
+    '无论您是想了解我们的产品与服务，还是寻求合作机会，我们的团队都期待与您沟通。',
+}
+
+export const FORM_SECTION_CONTENT = {
+  eyebrow: '联系我们',
+  headline: '开启智能升级之旅',
+  description:
+    '填写以下信息，我们的解决方案专家将为您提供一对一的咨询服务。',
+  infoTitle1: '联系方式',
+  infoTitle2: '常见问题',
+  infoTitle3: '办公地址',
+}

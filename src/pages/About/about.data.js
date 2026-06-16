@@ -134,6 +134,33 @@ export const TEAM_AVATARS = [
   },
 ]
 
+export const SECTION_CONTENT = {
+  story: {
+    title: '发展历程',
+    description: '从2018年创始至今，星筑科技一步一个脚印，用技术重新定义建材供应链的标准。',
+  },
+  values: {
+    title: '我们的价值观',
+    description: '三大核心理念驱动着星筑科技的每一次创新与决策。',
+  },
+  stats: {
+    title: '数据见证成长',
+    description: '一组数字背后，是星筑科技对建材供应链持续深耕的承诺。',
+  },
+  team: {
+    title: '团队与文化',
+    description: '一支跨学科的精英团队，用技术与热情驱动建材供应链的智能化变革。',
+  },
+}
+
+export const HERO_CONTENT = {
+  eyebrow: 'AI 重塑建材供应链',
+  trustIndicator1: { value: '7', label: '年行业深耕' },
+  trustIndicator2: { value: '98.7%', label: 'AI质检准确率' },
+  cta1: '探索解决方案',
+  cta2: '联系我们',
+}
+
 export const CAREERS_DATA = {
   description:
     '我们正在寻找热爱技术、拥抱产业变革的人才。无论你是算法工程师、全栈开发者还是行业专家，在这里都能找到施展才华的舞台。',

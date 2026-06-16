@@ -8,6 +8,7 @@ import About from '@/pages/About/About'
 import Solutions from '@/pages/Solutions/Solutions'
 import Insights from '@/pages/Insights/Insights'
 import Contact from '@/pages/Contact/Contact'
+import NotFound from '@/pages/NotFound/NotFound'
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -21,6 +22,7 @@ function AnimatedRoutes() {
           <Route path="solutions" element={<Solutions />} />
           <Route path="insights" element={<Insights />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </AnimatePresence>

@@ -257,3 +257,28 @@ export const comparisonData = {
     ],
   },
 }
+
+export const SOLUTIONS_SECTION_CONTENT = {
+  tabs: {
+    title: '四大解决方案',
+    description: '围绕建材供应链核心场景，提供从采购到交付的全链路AI解决方案',
+  },
+  hero: {
+    headline1: '用AI重塑',
+    headline2: '建材供应链',
+    description: '从智能采购到全链路追溯，星筑科技以AI为核心驱动建材供应链数字化升级，帮助企业降本增效、掌控质量、规避风险。',
+    cta1: '了解解决方案',
+    cta2: '预约演示',
+  },
+  architecture: {
+    headline: '技术架构',
+    description: '端到端AI技术平台，四层架构支撑建材供应链全场景智能化',
+  },
+  cta: {
+    headline1: '用AI重塑您的',
+    headline2: '建材供应链',
+    description: '预约专属演示，了解星筑科技如何通过AI技术赋能您的采购、物流与质量管理，驱动供应链全面升级。',
+    button1: '预约演示',
+    button2: '获取解决方案白皮书',
+  },
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yuguohang28.github.io/xingzhu-website_WORKtest/sitemap.xml
