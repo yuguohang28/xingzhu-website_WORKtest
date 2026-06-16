@@ -57,8 +57,8 @@ export const CONTACT_METHODS = [
   {
     icon: 'MapPin',
     title: '公司地址',
-    value: '上海市浦东新区张江高科技园区',
-    description: '碧波路888号华虹科技园2号楼3层',
+    value: '广东省深圳市南山区粤海街道科技园社区',
+    description: '科苑路8号讯美科技广场3号楼16142',
   },
 ]
 
@@ -82,14 +82,14 @@ export const FAQ_ITEMS = [
 
 export const OFFICE_LOCATIONS = [
   {
-    city: '上海（总部）',
-    address: '上海市浦东新区张江高科技园区碧波路888号华虹科技园2号楼3层',
+    city: '深圳市（总部）',
+    address: '广东省深圳市南山区粤海街道科技园社区科苑路8号讯美科技广场3号楼16142',
     phone: '021-5888-6688',
     hours: '工作日 9:00 - 18:00',
   },
   {
-    city: '北京（分公司）',
-    address: '北京市海淀区中关村软件园二期E栋8层',
+    city: '南宁市（分公司）',
+    address: '广西壮族自治区南宁市平乐大道15号五项绿地中心2号楼15层',
     phone: '010-8260-6688',
     hours: '工作日 9:00 - 18:00',
   },
