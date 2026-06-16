@@ -1,0 +1,188 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "星筑科技" [ref=e6] [cursor=pointer]:
+        - /url: "#/"
+        - img [ref=e8]
+        - generic [ref=e12]: 星筑科技
+      - generic [ref=e13]:
+        - link "首页" [ref=e14] [cursor=pointer]:
+          - /url: "#/"
+        - link "关于我们" [ref=e15] [cursor=pointer]:
+          - /url: "#/about"
+        - link "解决方案" [ref=e16] [cursor=pointer]:
+          - /url: "#/solutions"
+        - link "行业洞察" [ref=e17] [cursor=pointer]:
+          - /url: "#/insights"
+        - link "联系我们" [ref=e18] [cursor=pointer]:
+          - /url: "#/contact"
+      - link "咨询顾问" [ref=e20] [cursor=pointer]:
+        - /url: "#/contact"
+        - text: 咨询顾问
+        - img [ref=e21]
+  - main [ref=e24]:
+    - main [ref=e25]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - heading "用 AI 重塑 建筑供应链" [level=1] [ref=e32]:
+              - text: 用 AI 重塑
+              - generic [ref=e33]: 建筑供应链
+            - paragraph [ref=e34]: 以人工智能重塑建材流通，让每一块建材都能追根溯源。
+          - generic [ref=e35]:
+            - link "了解平台" [ref=e36] [cursor=pointer]:
+              - /url: "#/solutions"
+            - link "预约演示" [ref=e37] [cursor=pointer]:
+              - /url: "#/contact"
+              - text: 预约演示
+              - img [ref=e38]
+        - generic [ref=e40]:
+          - img [ref=e42]
+          - generic [ref=e55]:
+            - img [ref=e59]
+            - generic [ref=e62]: AI 中枢
+          - generic [ref=e63]:
+            - img [ref=e65]
+            - generic [ref=e68]: 需求录入
+          - generic [ref=e69]:
+            - img [ref=e71]
+            - generic [ref=e74]: 智能询价
+          - generic [ref=e75]:
+            - img [ref=e77]
+            - generic [ref=e82]: 供应商匹配
+          - generic [ref=e83]:
+            - img [ref=e85]
+            - generic [ref=e88]: 价格分析
+          - generic [ref=e89]:
+            - img [ref=e91]
+            - generic [ref=e94]: 履约追踪
+          - generic [ref=e95]:
+            - generic [ref=e96]:
+              - generic [ref=e97]: 1,284
+              - generic [ref=e98]: 今日询价
+              - generic [ref=e99]: 较昨日 +12%
+            - generic [ref=e100]:
+              - generic [ref=e101]: "326"
+              - generic [ref=e102]: 匹配供应商
+              - generic [ref=e103]: 实时在线
+            - generic [ref=e104]:
+              - generic [ref=e105]: 18min
+              - generic [ref=e106]: 平均响应
+              - generic [ref=e107]: 优于行业 40%
+      - generic [ref=e111]:
+        - paragraph [ref=e112]: 领先企业信赖之选
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - img [ref=e116]
+            - generic [ref=e120]: 中建集团
+          - generic [ref=e121]:
+            - img [ref=e123]
+            - generic [ref=e126]: 万科地产
+          - generic [ref=e127]:
+            - img [ref=e129]
+            - generic [ref=e132]: 碧桂园
+          - generic [ref=e133]:
+            - img [ref=e135]
+            - generic [ref=e136]: 中国中铁
+          - generic [ref=e137]:
+            - img [ref=e139]
+            - generic [ref=e143]: 华润置地
+          - generic [ref=e144]:
+            - img [ref=e146]
+            - generic [ref=e149]: 保利发展
+      - generic [ref=e152]:
+        - generic:
+          - heading [level=2]
+        - generic [ref=e153]:
+          - generic [ref=e158]:
+            - img [ref=e160]
+            - heading "智能采购引擎" [level=3] [ref=e164]
+            - paragraph [ref=e165]: 基于深度学习的需求预测与智能匹配，将采购效率提升 3 倍以上，成本降低 18%。
+          - generic [ref=e171]:
+            - img [ref=e173]
+            - heading "供应链可视化" [level=3] [ref=e176]
+            - paragraph [ref=e177]: 实时追踪每一批货物从出厂到工地的完整轨迹，异常预警准确率 96%。
+          - generic [ref=e183]:
+            - img [ref=e185]
+            - heading "质量 AI 检测" [level=3] [ref=e188]
+            - paragraph [ref=e189]: 计算机视觉自动识别建材缺陷，检测精度达 99.3%，覆盖 200 余品类。
+          - generic [ref=e195]:
+            - img [ref=e197]
+            - heading "物流智能调度" [level=3] [ref=e202]
+            - paragraph [ref=e203]: 多目标优化算法动态规划配送路径，运输时效提升 42%，碳排放降低 27%。
+      - generic [ref=e208]:
+        - generic [ref=e209]:
+          - generic [ref=e210]: 800+
+          - generic [ref=e211]: 城市覆盖
+        - generic [ref=e212]:
+          - generic [ref=e213]: 12,000+
+          - generic [ref=e214]: 供应商入驻
+        - generic [ref=e215]:
+          - generic [ref=e216]: 98.6%
+          - generic [ref=e217]: 履约准时率
+        - generic [ref=e218]:
+          - generic [ref=e219]: 45亿+
+          - generic [ref=e220]: 平台交易额
+      - generic [ref=e225]:
+        - heading "开启智能供应链之旅" [level=2] [ref=e226]
+        - paragraph [ref=e227]: 加入 12,000+ 供应商，共同构建 AI 驱动的建材流通新生态。
+        - link "立即预约演示" [ref=e229] [cursor=pointer]:
+          - /url: "#/contact"
+          - text: 立即预约演示
+          - img [ref=e230]
+  - contentinfo [ref=e232]:
+    - generic [ref=e233]:
+      - generic [ref=e234]:
+        - generic [ref=e235]:
+          - link "星筑科技" [ref=e236] [cursor=pointer]:
+            - /url: "#/"
+            - img [ref=e238]
+            - generic [ref=e242]: 星筑科技
+          - paragraph [ref=e243]:
+            - text: 以建材供应链为本体的 AI 科技公司。
+            - text: 用 AI 重塑建材供应链的每一个环节。
+        - generic [ref=e244]:
+          - heading "解决方案" [level=4] [ref=e245]
+          - list [ref=e246]:
+            - listitem [ref=e247]:
+              - link "智能采购" [ref=e248] [cursor=pointer]:
+                - /url: "#/solutions#procurement"
+            - listitem [ref=e249]:
+              - link "供应链优化" [ref=e250] [cursor=pointer]:
+                - /url: "#/solutions#supply-chain"
+            - listitem [ref=e251]:
+              - link "质量追溯" [ref=e252] [cursor=pointer]:
+                - /url: "#/solutions#traceability"
+            - listitem [ref=e253]:
+              - link "数据洞察" [ref=e254] [cursor=pointer]:
+                - /url: "#/solutions#analytics"
+        - generic [ref=e255]:
+          - heading "公司" [level=4] [ref=e256]
+          - list [ref=e257]:
+            - listitem [ref=e258]:
+              - link "关于我们" [ref=e259] [cursor=pointer]:
+                - /url: "#/about"
+            - listitem [ref=e260]:
+              - link "加入我们" [ref=e261] [cursor=pointer]:
+                - /url: "#/about#careers"
+            - listitem [ref=e262]:
+              - link "新闻动态" [ref=e263] [cursor=pointer]:
+                - /url: "#/insights"
+            - listitem [ref=e264]:
+              - link "联系我们" [ref=e265] [cursor=pointer]:
+                - /url: "#/contact"
+        - generic [ref=e266]:
+          - heading "法律" [level=4] [ref=e267]
+          - list [ref=e268]:
+            - listitem [ref=e269]:
+              - link "隐私政策" [ref=e270] [cursor=pointer]:
+                - /url: "#/privacy"
+            - listitem [ref=e271]:
+              - link "服务条款" [ref=e272] [cursor=pointer]:
+                - /url: "#/terms"
+      - generic [ref=e273]:
+        - paragraph [ref=e274]: © 2026 星筑科技. All rights reserved.
+        - link "开启合作" [ref=e275] [cursor=pointer]:
+          - /url: "#/contact"
+          - text: 开启合作
+          - img [ref=e276]

@@ -76,32 +76,34 @@ export const SECTION_HEADERS = {
 }
 
 export const HERO_COMMAND_CENTER = {
-  screenTitle: 'AI Supply Command',
-  screenSub: '实时供应链指挥中心',
-  // Site nodes on the map — x/y in percentage within the central panel
-  sites: [
-    { id: 'site-a', label: '科技园项目', type: 'building', x: 22, y: 28 },
-    { id: 'site-b', label: '商务区项目', type: 'building', x: 72, y: 22 },
-    { id: 'warehouse', label: '区域中心仓', type: 'warehouse', x: 48, y: 54 },
-    { id: 'supplier', label: '供应商集群', type: 'supplier', x: 18, y: 62 },
-    { id: 'site-c', label: '住宅区项目', type: 'building', x: 76, y: 58 },
+  screenTitle: '星筑 AI 供应链控制台',
+  screenSub: '实时分析中',
+  project: {
+    label: '项目需求',
+    name: '南宁城市更新一期',
+    status: 'AI 已识别',
+    batch: '本周 18 批次',
+    materials: ['水泥', '砂石', '钢材'],
+  },
+  suppliers: {
+    label: '供应商匹配',
+    count: '326',
+    response: '最优响应 18min',
+    items: [
+      { name: '区域一级仓', score: '98', status: '可履约' },
+      { name: '砂石联采站', score: '94', status: '价格优' },
+      { name: '钢材集配商', score: '91', status: '在途短' },
+    ],
+  },
+  metrics: [
+    { label: '智能询价', value: '1,284', hint: '今日处理' },
+    { label: '价格指数', value: '+3.2%', hint: '较上周' },
+    { label: '履约风险', value: '低', hint: '风险可控' },
   ],
-  // Routes: indices into sites array (from -> to)
-  routes: [
-    { from: 3, to: 2 },  // supplier -> warehouse
-    { from: 2, to: 0 },  // warehouse -> site-a
-    { from: 2, to: 1 },  // warehouse -> site-b
-    { from: 2, to: 4 },  // warehouse -> site-c
-    { from: 3, to: 0 },  // supplier -> site-a (direct)
-  ],
-  // 4 floating stat panels
-  panels: [
-    { label: '智能询价', value: '1,284', hint: '今日处理', pos: 'tl' },
-    { label: '价格指数', value: '+3.2%', hint: '较上周 ↑', pos: 'tr' },
-    { label: '供应商在线', value: '326', hint: '实时响应', pos: 'bl' },
-    { label: '履约风险', value: '低', hint: '风险可控', pos: 'br' },
-  ],
-  // Bottom supply chain flow bar
+  trend: {
+    label: '区域价格趋势',
+    values: [28, 42, 35, 54, 48, 62, 57],
+  },
   flow: ['需求识别', '询价比价', '供应匹配', '履约追踪'],
 }
 
