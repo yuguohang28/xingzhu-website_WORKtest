@@ -12,7 +12,7 @@ export function NewsletterSection() {
   return (
     <Section>
       <motion.div
-        className="max-w-[800px] mx-auto bg-white/[0.02] border border-white/[0.06] rounded-sm p-8 md:p-12 lg:p-14 text-center"
+        className="max-w-[800px] mx-auto bg-surface-100 border border-surface-200 rounded-sm p-8 md:p-12 lg:p-14 text-center"
         variants={newsletterEntrance}
         initial="hidden"
         whileInView="visible"
@@ -31,14 +31,14 @@ export function NewsletterSection() {
             <input
               type="email"
               placeholder={INSIGHTS_CONFIG.newsletterPlaceholder}
-              className="flex-1 px-4 py-3 text-sm bg-surface-900 border border-white/[0.08] rounded-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/20 transition-all duration-300"
+              className="flex-1 px-4 py-3 text-sm bg-surface-100 border border-surface-300/30 rounded-sm text-surface-800 placeholder:text-surface-400 focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/20 transition-all duration-300"
             />
             <Button type="submit" variant="primary" size="md">
               {INSIGHTS_CONFIG.newsletterButton}
               <ArrowRight className="w-4 h-4" />
             </Button>
           </form>
-          <p className="mt-3 text-xs text-slate-600">
+          <p className="mt-3 text-xs text-surface-400">
             订阅即表示您同意接收邮件，可随时退订。
           </p>
         </div>

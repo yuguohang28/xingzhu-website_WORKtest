@@ -19,20 +19,20 @@ export default function Solutions() {
   const activeCategory = solutionCategories.find((c) => c.id === activeTab)
 
   return (
-    <main className="bg-surface-950">
+    <main className="bg-surface-50">
       <HeroSection />
 
       {/* Solutions Tabs + Feature Detail */}
       <section
         id="solutions-tabs"
-        className="py-24 md:py-32 px-6 bg-surface-950"
+        className="py-24 md:py-32 px-6 bg-surface-50"
       >
         <div className="max-w-[1400px] mx-auto">
           <div className="max-w-[720px]">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-white leading-[1.1]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-surface-800 leading-[1.1]">
               {SOLUTIONS_SECTION_CONTENT.tabs.title}
             </h2>
-            <p className="mt-5 text-slate-400 text-base leading-relaxed max-w-[65ch]">
+            <p className="mt-5 text-surface-500 text-base leading-relaxed max-w-[65ch]">
               {SOLUTIONS_SECTION_CONTENT.tabs.description}
             </p>
           </div>

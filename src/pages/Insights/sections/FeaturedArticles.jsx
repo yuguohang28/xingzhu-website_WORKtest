@@ -17,7 +17,7 @@ function CategoryBadge({ category, size = 'sm' }) {
   const sizeClasses = size === 'sm' ? 'px-2.5 py-0.5 text-[11px]' : 'px-3 py-1 text-xs'
   return (
     <span
-      className={`inline-block bg-accent-500/10 text-accent-400 font-medium rounded-sm ${sizeClasses} tracking-wide`}
+      className={`inline-block bg-accent-100 text-accent-400 font-medium rounded-sm ${sizeClasses} tracking-wide`}
     >
       {label}
     </span>
@@ -32,7 +32,7 @@ function FeaturedCardLarge({ article }) {
   const { title, date, excerpt, category } = article
   return (
     <motion.div
-      className="group relative bg-white/[0.02] border border-white/[0.04] rounded-sm p-6 md:p-8 lg:p-10 cursor-pointer"
+      className="group relative bg-surface-100 border border-surface-200 rounded-sm p-6 md:p-8 lg:p-10 cursor-pointer"
       variants={featuredLargeEntrance}
       initial="hidden"
       whileInView="visible"
@@ -46,16 +46,16 @@ function FeaturedCardLarge({ article }) {
     >
       <div className="relative z-10 flex flex-col h-full">
         <CategoryBadge category={category} size="md" />
-        <h3 className="mt-4 text-xl md:text-2xl lg:text-3xl leading-tight text-white font-semibold tracking-tight">
+        <h3 className="mt-4 text-xl md:text-2xl lg:text-3xl leading-tight text-surface-800 font-semibold tracking-tight">
           {title}
         </h3>
-        <div className="mt-3 flex items-center gap-4 text-xs text-slate-500">
+        <div className="mt-3 flex items-center gap-4 text-xs text-surface-400">
           <span className="flex items-center gap-1.5">
             <Calendar className="w-3.5 h-3.5" />
             {formatArticleDate(date)}
           </span>
         </div>
-        <p className="mt-4 text-sm md:text-base text-slate-400 leading-relaxed line-clamp-3 md:line-clamp-4">
+        <p className="mt-4 text-sm md:text-base text-surface-500 leading-relaxed line-clamp-3 md:line-clamp-4">
           {excerpt}
         </p>
         <div className="mt-auto pt-6">
@@ -76,7 +76,7 @@ function FeaturedCardSmall({ article, delay }) {
   const { title, date, excerpt, category } = article
   return (
     <motion.div
-      className="group relative bg-white/[0.02] border border-white/[0.04] rounded-sm p-5 md:p-6 cursor-pointer"
+      className="group relative bg-surface-100 border border-surface-200 rounded-sm p-5 md:p-6 cursor-pointer"
       variants={featuredSmallEntrance}
       initial="hidden"
       whileInView="visible"
@@ -90,16 +90,16 @@ function FeaturedCardSmall({ article, delay }) {
     >
       <div className="relative z-10 flex flex-col h-full">
         <CategoryBadge category={category} />
-        <h3 className="mt-3 text-base md:text-lg leading-snug text-white font-semibold tracking-tight line-clamp-2">
+        <h3 className="mt-3 text-base md:text-lg leading-snug text-surface-800 font-semibold tracking-tight line-clamp-2">
           {title}
         </h3>
-        <div className="mt-2 flex items-center gap-4 text-xs text-slate-500">
+        <div className="mt-2 flex items-center gap-4 text-xs text-surface-400">
           <span className="flex items-center gap-1.5">
             <Calendar className="w-3.5 h-3.5" />
             {formatArticleDate(date)}
           </span>
         </div>
-        <p className="mt-3 text-sm text-slate-400 leading-relaxed line-clamp-2">
+        <p className="mt-3 text-sm text-surface-500 leading-relaxed line-clamp-2">
           {excerpt}
         </p>
         <div className="mt-auto pt-4">

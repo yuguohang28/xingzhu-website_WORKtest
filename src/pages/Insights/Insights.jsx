@@ -7,7 +7,7 @@ import { HeroSection, FeaturedArticles, ArticleGridSection, NewsletterSection } 
 export default function Insights() {
   return (
     <motion.div
-      className="min-h-[100dvh] bg-surface-950"
+      className="min-h-[100dvh] bg-surface-50"
       variants={pageTransition}
       initial="initial"
       animate="animate"

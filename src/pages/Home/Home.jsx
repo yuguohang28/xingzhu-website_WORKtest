@@ -8,7 +8,7 @@ import {
 
 export default function Home() {
   return (
-    <main className="bg-slate-950 text-white overflow-x-hidden">
+    <main className="bg-surface-50 text-surface-800 overflow-x-hidden">
       <HeroSection />
       <TrustSection />
       <CapabilitiesSection />

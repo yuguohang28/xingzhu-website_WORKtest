@@ -15,10 +15,10 @@ export function HeroSection() {
           animate="visible"
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05]">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-surface-800 leading-[1.05]">
             {HERO_CONFIG.headline}
           </h1>
-          <p className="mt-6 text-base md:text-lg text-slate-400 leading-relaxed max-w-[65ch]">
+          <p className="mt-6 text-base md:text-lg text-surface-500 leading-relaxed max-w-[65ch]">
             {HERO_CONFIG.subtitle}
           </p>
         </motion.div>

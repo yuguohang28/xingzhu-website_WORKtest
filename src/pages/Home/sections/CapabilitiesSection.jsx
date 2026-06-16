@@ -63,7 +63,7 @@ export default function CapabilitiesSection() {
                 key={card.id}
                 variants={fadeUp}
                 className={`
-                  group relative overflow-hidden rounded-2xl border border-white/[0.06]
+                  group relative overflow-hidden rounded-2xl border border-surface-200
                   ${isTall ? 'md:col-span-2 md:row-span-2' : ''}
                   ${isWide ? 'md:col-span-3' : ''}
                   ${!isTall && !isWide ? 'md:col-span-1' : ''}
@@ -77,22 +77,22 @@ export default function CapabilitiesSection() {
                     className="absolute inset-0 opacity-60 group-hover:opacity-80 transition-opacity duration-500"
                     style={{ background: card.gradient }}
                   />
-                  <div className="absolute inset-0 bg-slate-900/40" />
+                  <div className="absolute inset-0 bg-surface-100/60" />
 
                   {/* Content */}
                   <div className="relative z-10 flex flex-col gap-4 flex-1">
                     <div
-                      className={`flex items-center justify-center w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] ${isTall ? 'mb-4' : 'mb-2'}`}
+                      className={`flex items-center justify-center w-12 h-12 rounded-xl bg-surface-200/50 border border-surface-300/60 ${isTall ? 'mb-4' : 'mb-2'}`}
                     >
                       <Icon className={`w-6 h-6 ${accent.icon}`} />
                     </div>
                     <h3
-                      className={`font-bold text-white ${isTall ? 'text-2xl' : 'text-xl'}`}
+                      className={`font-bold text-surface-800 ${isTall ? 'text-2xl' : 'text-xl'}`}
                     >
                       {card.title}
                     </h3>
                     <p
-                      className={`text-slate-400 leading-relaxed ${isTall ? 'text-lg max-w-xl' : 'text-base'}`}
+                      className={`text-surface-500 leading-relaxed ${isTall ? 'text-lg max-w-xl' : 'text-base'}`}
                     >
                       {card.description}
                     </p>

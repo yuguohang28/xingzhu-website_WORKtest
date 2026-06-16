@@ -31,7 +31,7 @@ function Navbar() {
   }, [isOpen])
 
   const navClasses = scrolled
-    ? 'bg-slate-950/80 backdrop-blur-xl border-b border-white/[0.04]'
+    ? 'bg-surface-50/95 backdrop-blur-xl border-b border-surface-200 shadow-sm'
     : 'bg-transparent border-b border-transparent'
 
   return (
@@ -42,7 +42,7 @@ function Navbar() {
           <div className="w-8 h-8 rounded-sm bg-accent-500 flex items-center justify-center">
             <Building2 className="w-4.5 h-4.5 text-slate-950" strokeWidth={2} />
           </div>
-          <span className="text-base font-semibold tracking-tight text-white">
+          <span className="text-base font-semibold tracking-tight text-surface-800">
             {SITE_CONFIG.name}
           </span>
         </Link>
@@ -57,8 +57,8 @@ function Navbar() {
               className={({ isActive }) =>
                 `px-4 py-2 text-sm rounded-sm transition-all duration-300 ${
                   isActive
-                    ? 'text-accent-400 bg-accent-500/8'
-                    : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
+                    ? 'text-accent-400 bg-accent-100'
+                    : 'text-surface-500 hover:text-surface-800 hover:bg-surface-200/60'
                 }`
               }
             >
@@ -71,14 +71,14 @@ function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             to="/contact"
-            className="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 bg-accent-500 hover:bg-accent-400 text-slate-950 text-sm font-medium rounded-sm transition-all duration-300"
+            className="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 bg-accent-500 hover:bg-accent-400 text-surface-50 text-sm font-medium rounded-sm transition-all duration-300"
           >
             咨询顾问
             <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-slate-400 hover:text-white transition-colors"
+            className="lg:hidden p-2 text-surface-500 hover:text-surface-800 transition-colors"
             aria-label={isOpen ? '关闭菜单' : '打开菜单'}
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -94,7 +94,7 @@ function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: EASE_OUT_EXPO }}
-            className="lg:hidden absolute top-16 left-0 right-0 bg-slate-950/95 backdrop-blur-xl border-b border-white/[0.04]"
+            className="lg:hidden absolute top-16 left-0 right-0 bg-surface-50/98 backdrop-blur-xl border-b border-surface-200"
           >
             <div className="px-6 py-6 flex flex-col gap-1">
               {NAV_ITEMS.map((item, i) => (
@@ -110,13 +110,13 @@ function Navbar() {
                     className={({ isActive }) =>
                       `block px-4 py-3 rounded-sm text-base transition-all duration-300 ${
                         isActive
-                          ? 'text-accent-400 bg-accent-500/8'
-                          : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
+                          ? 'text-accent-400 bg-accent-100'
+                          : 'text-surface-500 hover:text-surface-800 hover:bg-surface-200/60'
                       }`
                     }
                   >
                     {item.label}
-                    <span className="ml-2 text-xs text-slate-600">{item.en}</span>
+                    <span className="ml-2 text-xs text-surface-400">{item.en}</span>
                   </NavLink>
                 </motion.div>
               ))}
@@ -128,7 +128,7 @@ function Navbar() {
               >
                 <Link
                   to="/contact"
-                  className="flex items-center justify-center gap-2 px-4 py-3 bg-accent-500 hover:bg-accent-400 text-slate-950 text-base font-medium rounded-sm transition-all"
+                  className="flex items-center justify-center gap-2 px-4 py-3 bg-accent-500 hover:bg-accent-400 text-surface-50 text-base font-medium rounded-sm transition-all"
                 >
                   咨询顾问
                   <ArrowUpRight className="w-4 h-4" />

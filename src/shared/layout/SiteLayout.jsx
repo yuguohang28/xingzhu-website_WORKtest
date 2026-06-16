@@ -6,7 +6,7 @@ import { pageTransition } from '@/shared/motion'
 
 function SiteLayout() {
   return (
-    <div className="min-h-screen bg-surface-950 text-slate-100 flex flex-col">
+    <div className="min-h-screen bg-surface-50 text-surface-700 flex flex-col">
       <Navbar />
       <motion.main
         className="flex-1 pt-16"

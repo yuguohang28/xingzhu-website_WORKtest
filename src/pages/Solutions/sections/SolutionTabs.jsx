@@ -22,7 +22,7 @@ export default function SolutionTabs({ activeTab, onTabChange }) {
   return (
     <div className="mt-10">
       {/* Desktop: horizontal tabs */}
-      <div className="hidden md:flex border-b border-white/[0.06]">
+      <div className="hidden md:flex border-b border-surface-200">
         {TAB_CONFIG.items.map((tab) => {
           const isActive = activeTab === tab.id
           return (
@@ -31,13 +31,13 @@ export default function SolutionTabs({ activeTab, onTabChange }) {
               onClick={() => onTabChange(tab.id)}
               className={`flex items-center gap-2.5 px-6 py-3.5 text-sm font-medium transition-all duration-300 border-b-2 -mb-px ${
                 isActive
-                  ? 'border-accent-500 text-white'
-                  : 'border-transparent text-slate-500 hover:text-slate-300'
+                  ? 'border-accent-500 text-surface-800'
+                  : 'border-transparent text-surface-400 hover:text-surface-600'
               }`}
             >
               <DynamicIcon
                 name={tab.icon}
-                className={`w-4 h-4 ${isActive ? 'text-accent-400' : 'text-slate-600'}`}
+                className={`w-4 h-4 ${isActive ? 'text-accent-400' : 'text-surface-400'}`}
               />
               {tab.label}
             </button>
@@ -52,7 +52,7 @@ export default function SolutionTabs({ activeTab, onTabChange }) {
           return (
             <div
               key={cat.id}
-              className="border border-white/[0.06] rounded-sm overflow-hidden"
+              className="border border-surface-200 rounded-sm overflow-hidden"
             >
               <button
                 onClick={() => handleMobileClick(cat.id)}
@@ -63,12 +63,12 @@ export default function SolutionTabs({ activeTab, onTabChange }) {
                     name={cat.icon}
                     className="w-4 h-4 text-accent-400"
                   />
-                  <span className="text-sm font-medium text-white">
+                  <span className="text-sm font-medium text-surface-800">
                     {cat.label}
                   </span>
                 </div>
                 <ChevronDown
-                  className={`w-4 h-4 text-slate-500 transition-transform duration-300 ${
+                  className={`w-4 h-4 text-surface-400 transition-transform duration-300 ${
                     isOpen ? 'rotate-180' : ''
                   }`}
                 />
@@ -84,26 +84,26 @@ export default function SolutionTabs({ activeTab, onTabChange }) {
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="px-4 pb-4 space-y-3 border-t border-white/[0.04] pt-3">
-                      <p className="text-xs text-slate-500 mb-3">
+                    <div className="px-4 pb-4 space-y-3 border-t border-surface-200 pt-3">
+                      <p className="text-xs text-surface-400 mb-3">
                         {cat.description}
                       </p>
                       {cat.features.map((feat) => (
                         <div
                           key={feat.title}
-                          className="flex items-start gap-3 p-3 rounded-sm bg-white/[0.02]"
+                          className="flex items-start gap-3 p-3 rounded-sm bg-surface-100"
                         >
-                          <div className="shrink-0 w-7 h-7 rounded-sm bg-accent-500/10 flex items-center justify-center">
+                          <div className="shrink-0 w-7 h-7 rounded-sm bg-accent-100 flex items-center justify-center">
                             <DynamicIcon
                               name={feat.icon}
                               className="w-3.5 h-3.5 text-accent-400"
                             />
                           </div>
                           <div>
-                            <h4 className="text-sm font-medium text-white">
+                            <h4 className="text-sm font-medium text-surface-800">
                               {feat.title}
                             </h4>
-                            <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">
+                            <p className="text-xs text-surface-400 mt-0.5 leading-relaxed">
                               {feat.description}
                             </p>
                           </div>

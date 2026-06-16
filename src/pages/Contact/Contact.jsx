@@ -8,7 +8,7 @@ import { HeroSection, ContactFormSection } from './contact.sections'
 export default function Contact() {
   return (
     <motion.main
-      className="min-h-[100dvh] bg-surface-950"
+      className="min-h-[100dvh] bg-surface-50"
       initial={pageTransition.initial}
       animate={pageTransition.animate}
       exit={pageTransition.exit}

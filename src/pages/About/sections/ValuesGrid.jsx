@@ -9,12 +9,12 @@ const iconMap = { Cpu, Shield, Leaf }
 
 export default function ValuesGrid() {
   return (
-    <section id="about-values" className="!bg-surface-900">
+    <section id="about-values" className="!bg-surface-100">
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce}>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-white leading-[1.1]">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-surface-800 leading-[1.1]">
           {SECTION_CONTENT.values.title}
         </h2>
-        <p className="mt-5 text-surface-400 text-base leading-relaxed max-w-[65ch]">
+        <p className="mt-5 text-surface-500 text-base leading-relaxed max-w-[65ch]">
           {SECTION_CONTENT.values.description}
         </p>
       </motion.div>
@@ -38,17 +38,17 @@ export default function ValuesGrid() {
               }`}
             >
               <Card className={`!p-8 h-full ${value.large ? 'md:!p-10' : ''}`}>
-                <div className="w-12 h-12 rounded-sm bg-accent-500/10 border border-accent-500/20 flex items-center justify-center mb-6 group-hover:bg-accent-500/20 transition-colors duration-300">
+                <div className="w-12 h-12 rounded-sm bg-accent-100 border border-accent-300/60 flex items-center justify-center mb-6 group-hover:bg-accent-500/20 transition-colors duration-300">
                   <IconComponent className="w-6 h-6 text-accent-400" />
                 </div>
                 <h3
-                  className={`text-white font-semibold leading-tight ${
+                  className={`text-surface-800 font-semibold leading-tight ${
                     value.large ? 'text-2xl' : 'text-xl'
                   }`}
                 >
                   {value.title}
                 </h3>
-                <p className="text-surface-400 text-sm md:text-base leading-relaxed mt-4">
+                <p className="text-surface-500 text-sm md:text-base leading-relaxed mt-4">
                   {value.description}
                 </p>
               </Card>

@@ -15,7 +15,7 @@ function Card({ children, className = '', animate = true, delay = 0, ...props })
 
   return (
     <Comp
-      className={`bg-white/[0.02] border border-white/[0.04] rounded-sm p-6 hover:border-white/[0.08] transition-all duration-300 ${className}`}
+      className={`bg-surface-100 border border-surface-200 rounded-sm p-6 hover:border-surface-300/50 transition-all duration-300 ${className}`}
       {...animProps}
       {...props}
     >

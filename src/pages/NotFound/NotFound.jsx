@@ -6,7 +6,7 @@ import { Button } from '@/shared/components'
 
 export default function NotFound() {
   return (
-    <main className="min-h-[100dvh] bg-surface-950 flex items-center justify-center px-6">
+    <main className="min-h-[100dvh] bg-surface-50 flex items-center justify-center px-6">
       <motion.div
         className="text-center max-w-md"
         variants={fadeUp}
@@ -15,15 +15,15 @@ export default function NotFound() {
         viewport={viewportOnce}
       >
         {/* 404 numeric visual */}
-        <p className="text-[clamp(6rem,15vw,10rem)] font-bold tracking-tight text-white/5 select-none leading-none">
+        <p className="text-[clamp(6rem,15vw,10rem)] font-bold tracking-tight text-surface-800/5 select-none leading-none">
           404
         </p>
 
         <div className="-mt-6 space-y-4">
-          <h1 className="text-2xl md:text-3xl font-semibold text-white tracking-tight">
+          <h1 className="text-2xl md:text-3xl font-semibold text-surface-800 tracking-tight">
             页面未找到
           </h1>
-          <p className="text-slate-400 text-sm md:text-base leading-relaxed max-w-[40ch] mx-auto">
+          <p className="text-surface-500 text-sm md:text-base leading-relaxed max-w-[40ch] mx-auto">
             您访问的页面不存在或已被移除。请检查链接是否正确，或返回首页继续浏览。
           </p>
         </div>

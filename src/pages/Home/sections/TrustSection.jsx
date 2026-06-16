@@ -87,7 +87,7 @@ function PartnerMonogram({ index }) {
 
 export default function TrustSection() {
   return (
-    <Section id={HOME_SECTION_IDS.trust} className="relative border-b border-white/5">
+    <Section id={HOME_SECTION_IDS.trust} className="relative border-b border-surface-200">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
         <motion.div
           className="flex flex-col items-center gap-12"
@@ -98,7 +98,7 @@ export default function TrustSection() {
         >
           <motion.p
             variants={trustLineVariants}
-            className="text-xs font-semibold text-slate-500 tracking-[0.15em]"
+            className="text-xs font-semibold text-surface-400 tracking-[0.15em]"
           >
             {SECTION_HEADERS.trust.label}
           </motion.p>
@@ -113,10 +113,10 @@ export default function TrustSection() {
                 variants={trustLineVariants}
                 className="flex flex-col items-center gap-3"
               >
-                <div className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-300">
+                <div className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-xl bg-surface-200/60 border border-surface-300/50 hover:bg-surface-300/50 hover:border-surface-300/60 transition-all duration-300">
                   <PartnerMonogram index={index} />
                 </div>
-                <span className="text-xs text-slate-500 font-medium whitespace-nowrap">
+                <span className="text-xs text-surface-400 font-medium whitespace-nowrap">
                   {partner.name}
                 </span>
               </motion.div>

@@ -10,7 +10,7 @@ export default function CTASection() {
   return (
     <section
       id={SOLUTIONS_CONFIG.sectionIds.cta}
-      className="relative py-24 md:py-32 px-6 bg-surface-950 overflow-hidden"
+      className="relative py-24 md:py-32 px-6 bg-surface-50 overflow-hidden"
     >
       {/* Background accent */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--color-accent-500)_0%,_transparent_65%)] opacity-[0.04]" />
@@ -23,11 +23,11 @@ export default function CTASection() {
         viewport={viewportOnce}
         className="relative max-w-[800px] mx-auto text-center"
       >
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15]">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-surface-800 leading-[1.15]">
           用AI重塑您的
           <span className="text-accent-400">建材供应链</span>
         </h2>
-        <p className="mt-5 text-base md:text-lg text-slate-400 leading-relaxed max-w-[560px] mx-auto">
+        <p className="mt-5 text-base md:text-lg text-surface-500 leading-relaxed max-w-[560px] mx-auto">
           预约专属演示，了解星筑科技如何通过AI技术赋能您的采购、物流与质量管理，驱动供应链全面升级。
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">

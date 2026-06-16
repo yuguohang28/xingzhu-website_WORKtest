@@ -184,7 +184,7 @@ export const architectureLayers = [
     label: '数据层',
     description: '多源数据采集与融合',
     labelColor: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
-    itemColor: 'bg-blue-500/10 border-blue-500/20 text-slate-300',
+    itemColor: 'bg-blue-500/10 border-blue-500/20 text-surface-600',
     items: [
       'IoT设备实时数据采集',
       'ERP系统对接',
@@ -196,8 +196,8 @@ export const architectureLayers = [
     id: 'ai',
     label: 'AI引擎层',
     description: '核心算法与模型',
-    labelColor: 'text-accent-400 bg-accent-500/10 border-accent-500/20',
-    itemColor: 'bg-accent-500/10 border-accent-500/20 text-slate-300',
+    labelColor: 'text-accent-400 bg-accent-100 border-accent-300/60',
+    itemColor: 'bg-accent-100 border-accent-300/60 text-surface-600',
     items: [
       'NLP采购需求解析',
       'LSTM时序预测模型',
@@ -210,7 +210,7 @@ export const architectureLayers = [
     label: '应用层',
     description: '业务功能模块',
     labelColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
-    itemColor: 'bg-emerald-500/10 border-emerald-500/20 text-slate-300',
+    itemColor: 'bg-emerald-500/10 border-emerald-500/20 text-surface-600',
     items: [
       '智能采购管理平台',
       '供应链协同系统',
@@ -223,7 +223,7 @@ export const architectureLayers = [
     label: '用户交互层',
     description: '多终端访问入口',
     labelColor: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
-    itemColor: 'bg-purple-500/10 border-purple-500/20 text-slate-300',
+    itemColor: 'bg-purple-500/10 border-purple-500/20 text-surface-600',
     items: [
       'Web端管理后台',
       '移动端APP',

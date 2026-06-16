@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 
 const variants = {
-  primary: 'bg-accent-500 hover:bg-accent-400 text-slate-950',
-  secondary: 'bg-white/[0.06] hover:bg-white/[0.10] text-white border border-white/[0.06]',
-  ghost: 'hover:bg-white/[0.04] text-slate-400 hover:text-white',
+  primary: 'bg-accent-500 hover:bg-accent-400 text-surface-50',
+  secondary: 'bg-surface-200 hover:bg-surface-300 text-surface-700 border border-surface-300/40',
+  ghost: 'hover:bg-surface-200/60 text-surface-500 hover:text-surface-700',
 }
 
 const sizes = {

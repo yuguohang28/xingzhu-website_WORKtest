@@ -9,7 +9,7 @@ export default function StatsSection() {
   return (
     <Section
       id={HOME_SECTION_IDS.stats}
-      className="relative border-y border-white/[0.06]"
+      className="relative border-y border-surface-200"
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-20 md:py-24">
         <motion.div
@@ -26,10 +26,10 @@ export default function StatsSection() {
               variants={statItemVariants}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2 tracking-tight">
+              <div className="text-4xl md:text-5xl font-bold text-surface-800 mb-2 tracking-tight">
                 {stat.value}
               </div>
-              <div className="text-sm md:text-base text-slate-400 font-medium">
+              <div className="text-sm md:text-base text-surface-500 font-medium">
                 {stat.label}
               </div>
             </motion.div>

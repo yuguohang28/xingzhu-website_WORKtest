@@ -1,8 +1,22 @@
 @import "tailwindcss";
 
-/* === Xingzhu Technology Design Token Overrides === */
+/* === Xingzhu Technology — Light Theme: "Mineral Stone" ===
+   Warm limestone + terracotta palette. Building-materials warmth meets AI-tech clarity.
+   surface-50  = lightest warm white   (page backgrounds)
+   surface-100 = card / surface white
+   surface-200 = subtle border / divider
+   surface-300 = stronger border
+   surface-400 = muted body text
+   surface-500 = secondary text
+   surface-600 = medium text
+   surface-700 = heading text
+   surface-800 = dark headings / emphasis
+   surface-900 = near-black text
+   surface-950 = deepest (rarely used for text)
+*/
 
 @theme {
+  /* Accent — warm copper / terracotta (preserved from original) */
   --color-accent-50: #fdf7f1;
   --color-accent-100: #fae9d8;
   --color-accent-200: #f3d1af;
@@ -15,18 +29,18 @@
   --color-accent-900: #653924;
   --color-accent-950: #371b10;
 
-  --color-surface-50: #f8fafc;
-  --color-surface-100: #f1f5f9;
-  --color-surface-200: #e2e8f0;
-  --color-surface-300: #cbd5e1;
-  --color-surface-400: #94a3b8;
-  --color-surface-500: #64748b;
-  --color-surface-600: #475569;
-  --color-surface-700: #334155;
-  --color-surface-800: #1e293b;
-  --color-surface-850: #15202d;
-  --color-surface-900: #0f172a;
-  --color-surface-950: #020617;
+  /* Surface — warm mineral scale (light theme) */
+  --color-surface-50: #fcfaf7;
+  --color-surface-100: #f7f3ed;
+  --color-surface-200: #ede6db;
+  --color-surface-300: #d9d0c3;
+  --color-surface-400: #a09888;
+  --color-surface-500: #7a7264;
+  --color-surface-600: #5c5549;
+  --color-surface-700: #3d3730;
+  --color-surface-800: #2d2820;
+  --color-surface-900: #1a1612;
+  --color-surface-950: #0f0d0a;
 }
 
 /* Base layer overrides */
@@ -39,36 +53,38 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-surface-50);
+    color: var(--color-surface-700);
   }
 
   ::selection {
-    background-color: rgba(212, 135, 75, 0.3);
-    color: #ffffff;
+    background-color: rgba(212, 135, 75, 0.25);
+    color: var(--color-surface-900);
   }
 }
 
 /* Gradient utilities */
 @utility gradient-accent {
-  background: linear-gradient(135deg, var(--color-accent-400), var(--color-accent-600));
+  background: linear-gradient(135deg, var(--color-accent-500), var(--color-accent-600));
 }
 
 @utility gradient-surface {
-  background: linear-gradient(180deg, var(--color-surface-900), var(--color-surface-950));
+  background: linear-gradient(180deg, var(--color-surface-100), var(--color-surface-50));
 }
 
-/* Custom scrollbar for dark theme */
+/* Custom scrollbar for light theme */
 @layer base {
   ::-webkit-scrollbar {
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--color-surface-950);
+    background: var(--color-surface-100);
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--color-surface-700);
+    background: var(--color-surface-300);
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-surface-500);
+    background: var(--color-surface-400);
   }
 }

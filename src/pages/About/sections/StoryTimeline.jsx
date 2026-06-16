@@ -8,10 +8,10 @@ export default function StoryTimeline() {
   return (
     <Section id="about-story" dark>
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce}>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-white leading-[1.1]">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-surface-800 leading-[1.1]">
           {SECTION_CONTENT.story.title}
         </h2>
-        <p className="mt-5 text-surface-400 text-base leading-relaxed max-w-[65ch]">
+        <p className="mt-5 text-surface-500 text-base leading-relaxed max-w-[65ch]">
           {SECTION_CONTENT.story.description}
         </p>
       </motion.div>
@@ -35,8 +35,8 @@ export default function StoryTimeline() {
               </div>
               <div className="w-2.5 h-2.5 rounded-full bg-accent-500 mb-4" />
               <Card className="!p-5">
-                <h3 className="text-white font-semibold text-base">{event.title}</h3>
-                <p className="text-surface-400 text-sm mt-2 leading-relaxed">
+                <h3 className="text-surface-800 font-semibold text-base">{event.title}</h3>
+                <p className="text-surface-500 text-sm mt-2 leading-relaxed">
                   {event.description}
                 </p>
               </Card>
@@ -72,8 +72,8 @@ export default function StoryTimeline() {
             <div className="w-[calc(50%-36px)]">
               <Card className="!p-6 relative">
                 <span className="text-accent-500 text-sm font-mono font-bold">{event.year}</span>
-                <h3 className="text-white text-xl font-semibold mt-2">{event.title}</h3>
-                <p className="text-surface-400 text-sm mt-3 leading-relaxed">
+                <h3 className="text-surface-800 text-xl font-semibold mt-2">{event.title}</h3>
+                <p className="text-surface-500 text-sm mt-3 leading-relaxed">
                   {event.description}
                 </p>
               </Card>

@@ -16,26 +16,26 @@ function AbstractAvatar({ initials, gradient, name, role, delay = 0 }) {
     >
       {/* Geometric abstract avatar — monogram circle */}
       <div
-        className={`w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center mb-3 shadow-lg shadow-black/20`}
+        className={`w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center mb-3 shadow-lg shadow-surface-900/8`}
       >
-        <span className="text-white font-bold text-lg md:text-xl tracking-wide">
+        <span className="text-surface-800 font-bold text-lg md:text-xl tracking-wide">
           {initials}
         </span>
       </div>
-      <span className="text-white text-sm font-medium">{name}</span>
-      <span className="text-surface-500 text-xs mt-0.5">{role}</span>
+      <span className="text-surface-800 text-sm font-medium">{name}</span>
+      <span className="text-surface-400 text-xs mt-0.5">{role}</span>
     </motion.div>
   )
 }
 
 export default function TeamSection() {
   return (
-    <Section id="about-team" className="!bg-surface-900">
+    <Section id="about-team" className="!bg-surface-100">
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce}>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-white leading-[1.1]">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-surface-800 leading-[1.1]">
           {SECTION_CONTENT.team.title}
         </h2>
-        <p className="mt-5 text-surface-400 text-base leading-relaxed max-w-[65ch]">
+        <p className="mt-5 text-surface-500 text-base leading-relaxed max-w-[65ch]">
           {SECTION_CONTENT.team.description}
         </p>
       </motion.div>
@@ -55,21 +55,21 @@ export default function TeamSection() {
               <Sparkles className="w-6 h-6 text-accent-400" />
               <span className="text-accent-500 text-sm font-medium">团队理念</span>
             </div>
-            <h3 className="text-white text-2xl md:text-3xl font-semibold leading-tight">
+            <h3 className="text-surface-800 text-2xl md:text-3xl font-semibold leading-tight">
               {TEAM_ETHOS.tagline}
             </h3>
-            <p className="text-surface-400 text-sm md:text-base leading-relaxed mt-5">
+            <p className="text-surface-500 text-sm md:text-base leading-relaxed mt-5">
               {TEAM_ETHOS.description}
             </p>
           </div>
 
           {/* Bottom section with careers CTA */}
-          <div className="mt-8 pt-8 border-t border-white/[0.04]">
+          <div className="mt-8 pt-8 border-t border-surface-200">
             <div className="flex items-start gap-4">
               <HardHat className="w-5 h-5 text-accent-400 shrink-0 mt-0.5" />
               <div>
-                <p className="text-white text-sm font-medium">加入我们</p>
-                <p className="text-surface-400 text-sm mt-1 leading-relaxed">
+                <p className="text-surface-800 text-sm font-medium">加入我们</p>
+                <p className="text-surface-500 text-sm mt-1 leading-relaxed">
                   {CAREERS_DATA.description}
                 </p>
                 <Button variant="secondary" size="sm" className="mt-4" to="/contact">

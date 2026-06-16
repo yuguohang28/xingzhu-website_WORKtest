@@ -73,14 +73,14 @@ function FormField({ field, value, error, onChange, onBlur }) {
   const inputId = `contact-${field.name}`
 
   const baseInput =
-    'w-full bg-white/[0.03] rounded-sm px-4 py-3 text-white text-sm ' +
-    'placeholder:text-slate-600 ' +
+    'w-full bg-surface-100 rounded-sm px-4 py-3 text-surface-800 text-sm ' +
+    'placeholder:text-surface-400 ' +
     'focus:outline-none focus:ring-2 focus:ring-accent-500/50 focus:border-transparent ' +
     'transition-all duration-200'
 
   const borderClass = error
     ? 'border border-red-400/50'
-    : 'border border-white/[0.08]'
+    : 'border border-surface-300/30'
 
   return (
     <motion.div
@@ -93,7 +93,7 @@ function FormField({ field, value, error, onChange, onBlur }) {
     >
       <label
         htmlFor={inputId}
-        className="block text-slate-300 text-sm font-medium"
+        className="block text-surface-600 text-sm font-medium"
       >
         {field.label}
         {FORM_CONFIG.REQUIRED_FIELDS.includes(field.name) && (
@@ -165,7 +165,7 @@ function FormSubmitButton({ loading }) {
           'relative overflow-hidden',
           'w-full lg:w-auto px-10 py-3.5',
           'bg-accent-500 hover:bg-accent-400',
-          'text-slate-950 font-medium text-sm',
+          'text-surface-50 font-medium text-sm',
           'rounded-sm',
           'transition-all duration-300',
           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500/50',
@@ -216,7 +216,7 @@ function SuccessState({ onReset }) {
         initial="hidden"
         animate="visible"
       >
-        <div className="w-20 h-20 rounded-full bg-accent-500/10 border-2 border-accent-500/30 flex items-center justify-center mb-6">
+        <div className="w-20 h-20 rounded-full bg-accent-100 border-2 border-accent-400/50 flex items-center justify-center mb-6">
           <Check className="w-10 h-10 text-accent-500" strokeWidth={2.5} />
         </div>
       </motion.div>
@@ -226,10 +226,10 @@ function SuccessState({ onReset }) {
         initial="hidden"
         animate="visible"
       >
-        <h3 className="text-2xl font-semibold text-white mb-3">
+        <h3 className="text-2xl font-semibold text-surface-800 mb-3">
           {FORM_CONFIG.SUCCESS_TITLE}
         </h3>
-        <p className="text-slate-400 text-sm leading-relaxed max-w-md mx-auto mb-8">
+        <p className="text-surface-500 text-sm leading-relaxed max-w-md mx-auto mb-8">
           {FORM_CONFIG.SUCCESS_DESCRIPTION}
         </p>
         <Button variant="ghost" size="md" onClick={onReset}>
@@ -251,15 +251,15 @@ function ContactMethodCard({ method, index }) {
 
   const content = (
     <div className="flex items-start gap-4 group">
-      <div className="w-10 h-10 rounded-sm bg-white/[0.04] border border-white/[0.06] flex items-center justify-center shrink-0 group-hover:border-accent-500/30 group-hover:bg-accent-500/5 transition-colors duration-300">
+      <div className="w-10 h-10 rounded-sm bg-surface-200/50 border border-surface-200 flex items-center justify-center shrink-0 group-hover:border-accent-400/50 group-hover:bg-accent-500/5 transition-colors duration-300">
         <Icon className="w-4 h-4 text-accent-500" />
       </div>
       <div className="min-w-0">
-        <h4 className="text-white text-sm font-medium mb-0.5">
+        <h4 className="text-surface-800 text-sm font-medium mb-0.5">
           {method.title}
         </h4>
-        <p className="text-slate-400 text-sm break-all">{method.value}</p>
-        <p className="text-slate-500 text-xs mt-0.5">{method.description}</p>
+        <p className="text-surface-500 text-sm break-all">{method.value}</p>
+        <p className="text-surface-400 text-xs mt-0.5">{method.description}</p>
       </div>
     </div>
   )
@@ -271,7 +271,7 @@ function ContactMethodCard({ method, index }) {
       initial="hidden"
       whileInView="visible"
       viewport={viewportOnce}
-      className="pb-5 border-b border-white/[0.06] last:border-b-0 last:pb-0"
+      className="pb-5 border-b border-surface-200 last:border-b-0 last:pb-0"
     >
       {method.href ? (
         <a
@@ -305,14 +305,14 @@ function FaqAccordion({ items }) {
         return (
           <div
             key={item.id}
-            className="border-b border-white/[0.06] last:border-b-0"
+            className="border-b border-surface-200 last:border-b-0"
           >
             <button
               type="button"
               onClick={() => toggle(item.id)}
               className={[
                 'w-full flex items-center justify-between gap-4 py-4 text-left',
-                'text-sm text-white font-medium',
+                'text-sm text-surface-800 font-medium',
                 'hover:text-accent-300 transition-colors duration-200',
               ].join(' ')}
             >
@@ -323,7 +323,7 @@ function FaqAccordion({ items }) {
                 animate={isOpen ? 'expanded' : 'collapsed'}
                 className="shrink-0"
               >
-                <ChevronDown className="w-4 h-4 text-slate-500" />
+                <ChevronDown className="w-4 h-4 text-surface-400" />
               </motion.div>
             </button>
 
@@ -336,7 +336,7 @@ function FaqAccordion({ items }) {
                 opacity: isOpen ? 1 : 0,
               }}
             >
-              <div className="pb-4 text-slate-400 text-sm leading-relaxed">
+              <div className="pb-4 text-surface-500 text-sm leading-relaxed">
                 {item.answer}
               </div>
             </div>
@@ -362,7 +362,7 @@ function InfoPanel() {
     >
       {/* Contact methods */}
       <div>
-        <h3 className="text-white text-lg font-semibold mb-5">
+        <h3 className="text-surface-800 text-lg font-semibold mb-5">
           {FORM_SECTION_CONTENT.infoTitle1}
         </h3>
         <div className="space-y-5">
@@ -374,7 +374,7 @@ function InfoPanel() {
 
       {/* FAQ */}
       <div>
-        <h3 className="text-white text-lg font-semibold mb-5">
+        <h3 className="text-surface-800 text-lg font-semibold mb-5">
           {FORM_SECTION_CONTENT.infoTitle2}
         </h3>
         <FaqAccordion items={FAQ_ITEMS} />
@@ -382,23 +382,23 @@ function InfoPanel() {
 
       {/* Office locations */}
       <div>
-        <h3 className="text-white text-lg font-semibold mb-5">
+        <h3 className="text-surface-800 text-lg font-semibold mb-5">
           {FORM_SECTION_CONTENT.infoTitle3}
         </h3>
         <div className="space-y-4">
           {OFFICE_LOCATIONS.map((office) => (
             <div key={office.city} className="flex items-start gap-3 group">
-              <div className="w-10 h-10 rounded-sm bg-white/[0.04] border border-white/[0.06] flex items-center justify-center shrink-0 group-hover:border-accent-500/30 group-hover:bg-accent-500/5 transition-colors duration-300">
-                <MapPin className="w-4 h-4 text-slate-400" />
+              <div className="w-10 h-10 rounded-sm bg-surface-200/50 border border-surface-200 flex items-center justify-center shrink-0 group-hover:border-accent-400/50 group-hover:bg-accent-500/5 transition-colors duration-300">
+                <MapPin className="w-4 h-4 text-surface-500" />
               </div>
               <div>
-                <h4 className="text-white text-sm font-medium mb-0.5">
+                <h4 className="text-surface-800 text-sm font-medium mb-0.5">
                   {office.city}
                 </h4>
-                <p className="text-slate-400 text-sm leading-relaxed">
+                <p className="text-surface-500 text-sm leading-relaxed">
                   {office.address}
                 </p>
-                <p className="text-slate-500 text-xs mt-1">
+                <p className="text-surface-400 text-xs mt-1">
                   {office.phone} · {office.hours}
                 </p>
               </div>
@@ -408,8 +408,8 @@ function InfoPanel() {
       </div>
 
       {/* Response time trust signal */}
-      <div className="flex items-center gap-2 text-xs text-slate-500 bg-white/[0.02] border border-white/[0.04] rounded-sm px-4 py-3">
-        <Clock className="w-3.5 h-3.5 text-slate-600 shrink-0" />
+      <div className="flex items-center gap-2 text-xs text-surface-400 bg-surface-100 border border-surface-200 rounded-sm px-4 py-3">
+        <Clock className="w-3.5 h-3.5 text-surface-400 shrink-0" />
         <span>{FORM_CONFIG.RESPONSE_TIME_TEXT}</span>
       </div>
     </motion.div>

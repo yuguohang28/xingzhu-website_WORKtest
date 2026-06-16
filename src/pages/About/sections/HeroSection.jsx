@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section
       id="about-hero"
-      className="relative min-h-[100dvh] flex items-center px-6 bg-surface-950 overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center px-6 bg-surface-50 overflow-hidden"
     >
       {/* Subtle grid background */}
       <div
@@ -76,7 +76,7 @@ export default function HeroSection() {
                 className={`w-8 h-8 rounded-sm ${
                   cell === 2
                     ? 'bg-accent-500/30 border border-accent-500/40'
-                    : 'bg-accent-500/10 border border-accent-500/20'
+                    : 'bg-accent-100 border border-accent-300/60'
                 }`}
               />
             )
@@ -96,7 +96,7 @@ export default function HeroSection() {
           <p className="text-accent-500 text-sm tracking-[0.2em] mb-6 font-medium">
             {HERO_CONTENT.eyebrow}
           </p>
-          <h1 className="text-[clamp(2.25rem,5vw,4.5rem)] font-bold tracking-tight text-white leading-[1.05]">
+          <h1 className="text-[clamp(2.25rem,5vw,4.5rem)] font-bold tracking-tight text-surface-800 leading-[1.05]">
             {ABOUT_STORY.mission.split('').map((char, i) =>
               char === ' ' ? (
                 <br key={i} />
@@ -107,7 +107,7 @@ export default function HeroSection() {
               )
             )}
           </h1>
-          <p className="text-surface-400 text-base md:text-lg mt-8 leading-relaxed max-w-[520px]">
+          <p className="text-surface-500 text-base md:text-lg mt-8 leading-relaxed max-w-[520px]">
             {ABOUT_STORY.intro}
           </p>
           <div className="flex flex-wrap gap-4 mt-10">
@@ -120,14 +120,14 @@ export default function HeroSection() {
           </div>
 
           {/* Trust indicators */}
-          <div className="flex gap-8 mt-14 pt-8 border-t border-white/[0.04]">
+          <div className="flex gap-8 mt-14 pt-8 border-t border-surface-200">
             <div>
-              <span className="text-white text-2xl font-bold">{HERO_CONTENT.trustIndicator1.value}</span>
-              <span className="text-surface-500 text-sm ml-1">{HERO_CONTENT.trustIndicator1.label}</span>
+              <span className="text-surface-800 text-2xl font-bold">{HERO_CONTENT.trustIndicator1.value}</span>
+              <span className="text-surface-400 text-sm ml-1">{HERO_CONTENT.trustIndicator1.label}</span>
             </div>
             <div>
-              <span className="text-white text-2xl font-bold">{HERO_CONTENT.trustIndicator2.value}</span>
-              <span className="text-surface-500 text-sm ml-1">{HERO_CONTENT.trustIndicator2.label}</span>
+              <span className="text-surface-800 text-2xl font-bold">{HERO_CONTENT.trustIndicator2.value}</span>
+              <span className="text-surface-400 text-sm ml-1">{HERO_CONTENT.trustIndicator2.label}</span>
             </div>
           </div>
         </motion.div>

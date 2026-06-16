@@ -38,7 +38,7 @@ export default function ArchitectureSection() {
               className="relative"
             >
               {/* Connector dot */}
-              <div className="absolute -left-[25px] md:-left-[31px] top-1 w-[18px] h-[18px] md:w-[22px] md:h-[22px] rounded-full bg-surface-900 border-2 border-accent-500/50 flex items-center justify-center">
+              <div className="absolute -left-[25px] md:-left-[31px] top-1 w-[18px] h-[18px] md:w-[22px] md:h-[22px] rounded-full bg-surface-100 border-2 border-accent-500/50 flex items-center justify-center">
                 <div className="w-[6px] h-[6px] md:w-[8px] md:h-[8px] rounded-full bg-accent-500" />
               </div>
 
@@ -49,7 +49,7 @@ export default function ArchitectureSection() {
                 >
                   {layer.label}
                 </span>
-                <p className="mt-1.5 text-sm text-slate-500">
+                <p className="mt-1.5 text-sm text-surface-400">
                   {layer.description}
                 </p>
               </div>

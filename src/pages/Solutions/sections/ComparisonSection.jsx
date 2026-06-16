@@ -32,19 +32,19 @@ export default function ComparisonSection() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="border border-white/[0.06] rounded-sm p-6 md:p-8 bg-white/[0.01]"
+          className="border border-surface-200 rounded-sm p-6 md:p-8 bg-surface-100"
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-8 rounded-sm bg-red-500/10 flex items-center justify-center">
               <X className="w-4 h-4 text-red-400" />
             </div>
-            <h3 className="text-base font-semibold text-slate-300">
+            <h3 className="text-base font-semibold text-surface-600">
               {before.title}
             </h3>
           </div>
           <ul className="space-y-4">
             {before.items.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-slate-500">
+              <li key={i} className="flex items-start gap-3 text-sm text-surface-400">
                 <X className="w-4 h-4 text-red-400/60 mt-0.5 shrink-0" />
                 <span>{item}</span>
               </li>
@@ -59,19 +59,19 @@ export default function ComparisonSection() {
           whileInView="visible"
           viewport={viewportOnce}
           transition={{ delay: 0.15 }}
-          className="border border-accent-500/20 rounded-sm p-6 md:p-8 bg-accent-500/[0.02]"
+          className="border border-accent-300/60 rounded-sm p-6 md:p-8 bg-accent-50/80"
         >
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-8 h-8 rounded-sm bg-accent-500/15 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-sm bg-accent-100 flex items-center justify-center">
               <Check className="w-4 h-4 text-accent-400" />
             </div>
-            <h3 className="text-base font-semibold text-white">
+            <h3 className="text-base font-semibold text-surface-800">
               {after.title}
             </h3>
           </div>
           <ul className="space-y-4">
             {after.items.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-slate-300">
+              <li key={i} className="flex items-start gap-3 text-sm text-surface-600">
                 <Check className="w-4 h-4 text-accent-400 mt-0.5 shrink-0" />
                 <span>{item}</span>
               </li>

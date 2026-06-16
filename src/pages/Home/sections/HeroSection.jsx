@@ -17,7 +17,7 @@ export default function HeroSection() {
       className="relative min-h-[100dvh] flex items-center overflow-hidden"
     >
       {/* Background layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
+      <div className="absolute inset-0 bg-gradient-to-br from-surface-50 via-surface-100 to-surface-50" />
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-600/5 to-transparent" />
 
       <motion.div
@@ -30,13 +30,13 @@ export default function HeroSection() {
         {/* ---------- Left: Content ---------- */}
         <div className="flex flex-col gap-8 pt-20 lg:pt-0">
           <motion.div variants={heroContentVariants} className="flex flex-col gap-4">
-            <h1 className="text-[clamp(2.25rem,5vw,4.5rem)] font-bold tracking-tight text-white leading-[1.1]">
+            <h1 className="text-[clamp(2.25rem,5vw,4.5rem)] font-bold tracking-tight text-surface-800 leading-[1.1]">
               {HERO_DATA.headlineLine1}
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-300 to-emerald-300">
                 {HERO_DATA.headlineLine2}
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-300 max-w-[40ch] leading-relaxed">
+            <p className="text-lg md:text-xl text-surface-600 max-w-[40ch] leading-relaxed">
               {HERO_DATA.subtext}
             </p>
           </motion.div>
@@ -55,7 +55,7 @@ export default function HeroSection() {
         {/* ---------- Right: Abstract Visual ---------- */}
         <motion.div
           variants={heroContentVariants}
-          className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-[500px] rounded-2xl overflow-hidden border border-white/5 bg-slate-900/50"
+          className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-[500px] rounded-2xl overflow-hidden border border-surface-200 bg-surface-100/70"
         >
           {/* Grid pattern */}
           <div

@@ -4,7 +4,7 @@ import { SITE_CONFIG, FOOTER_LINKS } from '@/shared/data/navigation'
 
 function Footer() {
   return (
-    <footer className="border-t border-white/[0.04] bg-surface-950">
+    <footer className="border-t border-surface-200 bg-surface-100">
       <div className="max-w-[1400px] mx-auto px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
@@ -13,11 +13,11 @@ function Footer() {
               <div className="w-8 h-8 rounded-sm bg-accent-500 flex items-center justify-center">
                 <Building2 className="w-4.5 h-4.5 text-slate-950" strokeWidth={2} />
               </div>
-              <span className="text-base font-semibold tracking-tight text-white">
+              <span className="text-base font-semibold tracking-tight text-surface-800">
                 {SITE_CONFIG.name}
               </span>
             </Link>
-            <p className="text-slate-500 text-sm leading-relaxed max-w-[280px]">
+            <p className="text-surface-400 text-sm leading-relaxed max-w-[280px]">
               {SITE_CONFIG.tagline}。<br />
               用 AI 重塑建材供应链的每一个环节。
             </p>
@@ -25,13 +25,13 @@ function Footer() {
 
           {/* Solutions */}
           <div>
-            <h4 className="text-white text-sm font-medium mb-4">解决方案</h4>
+            <h4 className="text-surface-800 text-sm font-medium mb-4">解决方案</h4>
             <ul className="space-y-2.5">
               {FOOTER_LINKS.solutions.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-slate-500 hover:text-slate-300 text-sm transition-colors duration-200"
+                    className="text-surface-400 hover:text-surface-600 text-sm transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -42,13 +42,13 @@ function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-white text-sm font-medium mb-4">公司</h4>
+            <h4 className="text-surface-800 text-sm font-medium mb-4">公司</h4>
             <ul className="space-y-2.5">
               {FOOTER_LINKS.company.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-slate-500 hover:text-slate-300 text-sm transition-colors duration-200"
+                    className="text-surface-400 hover:text-surface-600 text-sm transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -59,13 +59,13 @@ function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-white text-sm font-medium mb-4">法律</h4>
+            <h4 className="text-surface-800 text-sm font-medium mb-4">法律</h4>
             <ul className="space-y-2.5">
               {FOOTER_LINKS.legal.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-slate-500 hover:text-slate-300 text-sm transition-colors duration-200"
+                    className="text-surface-400 hover:text-surface-600 text-sm transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -76,11 +76,11 @@ function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-600 text-xs">{SITE_CONFIG.copyright}</p>
+        <div className="mt-16 pt-8 border-t border-surface-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-surface-400 text-xs">{SITE_CONFIG.copyright}</p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-1.5 text-slate-400 hover:text-white text-sm transition-colors duration-200"
+            className="inline-flex items-center gap-1.5 text-surface-500 hover:text-surface-800 text-sm transition-colors duration-200"
           >
             开启合作
             <ArrowUpRight className="w-3.5 h-3.5" />

@@ -11,7 +11,7 @@ export default function HeroSection() {
   return (
     <section
       id={SOLUTIONS_CONFIG.sectionIds.hero}
-      className="relative min-h-[100dvh] flex items-center bg-surface-950 overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center bg-surface-50 overflow-hidden"
     >
       {/* Subtle background gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-accent-500)_0%,_transparent_60%)] opacity-[0.03]" />
@@ -25,12 +25,12 @@ export default function HeroSection() {
             initial="hidden"
             animate="visible"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.08]">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-surface-800 leading-[1.08]">
               用AI重塑
               <br />
               <span className="text-accent-400">建材供应链</span>
             </h1>
-            <p className="mt-6 text-base md:text-lg text-slate-400 leading-relaxed max-w-[520px]">
+            <p className="mt-6 text-base md:text-lg text-surface-500 leading-relaxed max-w-[520px]">
               从智能采购到全链路追溯，星筑科技以AI为核心驱动建材供应链数字化升级，帮助企业降本增效、掌控质量、规避风险。
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
@@ -60,19 +60,19 @@ export default function HeroSection() {
               <motion.div
                 key={item.title}
                 variants={fadeUp}
-                className="group flex items-start gap-4 p-4 rounded-sm border border-white/[0.04] bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/[0.08] transition-all duration-300"
+                className="group flex items-start gap-4 p-4 rounded-sm border border-surface-200 bg-surface-100 hover:bg-surface-200/60 hover:border-surface-300/50 transition-all duration-300"
               >
-                <div className="shrink-0 w-10 h-10 rounded-sm bg-accent-500/10 flex items-center justify-center group-hover:bg-accent-500/20 transition-colors">
+                <div className="shrink-0 w-10 h-10 rounded-sm bg-accent-100 flex items-center justify-center group-hover:bg-accent-500/20 transition-colors">
                   <DynamicIcon
                     name={item.icon}
                     className="w-5 h-5 text-accent-400"
                   />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-white mb-0.5">
+                  <h3 className="text-sm font-semibold text-surface-800 mb-0.5">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">
+                  <p className="text-xs text-surface-400 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
