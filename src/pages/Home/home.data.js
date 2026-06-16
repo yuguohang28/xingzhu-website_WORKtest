@@ -75,6 +75,26 @@ export const SECTION_HEADERS = {
   trust: { label: '领先企业信赖之选' },
 }
 
+export const HERO_DASHBOARD = {
+  aiCore: {
+    label: 'AI 中枢',
+    sublabel: '星筑智能引擎',
+  },
+  nodes: [
+    { id: 'demand', label: '需求录入', icon: 'FileText', x: '18%', y: '26%', color: 'blue' },
+    { id: 'inquiry', label: '智能询价', icon: 'Search', x: '50%', y: '8%', color: 'emerald' },
+    { id: 'matching', label: '供应商匹配', icon: 'Users', x: '82%', y: '26%', color: 'purple' },
+    { id: 'pricing', label: '价格分析', icon: 'TrendingUp', x: '22%', y: '60%', color: 'amber' },
+    { id: 'tracking', label: '履约追踪', icon: 'CheckCircle', x: '78%', y: '60%', color: 'cyan' },
+  ],
+  centerPos: { x: '50%', y: '38%' },
+  metrics: [
+    { label: '今日询价', value: '1,284', hint: '较昨日 +12%' },
+    { label: '匹配供应商', value: '326', hint: '实时在线' },
+    { label: '平均响应', value: '18min', hint: '优于行业 40%' },
+  ],
+}
+
 export const CTA_DATA = {
   title: '开启智能供应链之旅',
   description:
